@@ -1,6 +1,6 @@
 {
   "name": "@easylogic/inspector",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Fantastic Inspector for UI System ",
   "main": "./dist/editor.js",
   "directories": {
