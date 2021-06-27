@@ -34,7 +34,6 @@ const REF_CLASS_PROPERTY = `[${REF_CLASS}]`
 const expectMethod = {
   "constructor": true,
   "initState": true,
-  "refresh": true,
   "updateData": true,
   "constructor": true,
   "initializeProperty": true,
@@ -104,6 +103,8 @@ export default class EventMachine {
     this.props = props;
     this.source = uuid();
     this.sourceName = this.constructor.name;  
+
+
 
   }
 
@@ -248,7 +249,9 @@ export default class EventMachine {
     const list = TEMP_DIV.html(html).children();
     /////////////////////////////////
 
-    list.forEach($el => {
+    for(var i = 0, len = list.length; i < len; i++) {
+      const $el = list[i];
+
       var ref = $el.attr(REFERENCE_PROPERTY)
       if (ref) {
         this.refs[ref] = $el;
@@ -256,7 +259,9 @@ export default class EventMachine {
 
       var refs = $el.$$(QUERY_PROPERTY);
       var temp = {} 
-      refs.forEach($dom => {
+
+      for(var refsIndex = 0, refsLen = refs.length; refsIndex < refsLen; refsIndex++) {
+        const $dom = refs[refsIndex];
 
         const name = $dom.attr(REFERENCE_PROPERTY);
         if (temp[name]) {
@@ -265,11 +270,9 @@ export default class EventMachine {
           temp[name] = true; 
         }
 
-        this.refs[name] = $dom;        
-      });
-
-
-    });
+        this.refs[name] = $dom;             
+      }
+    }
 
     if (!isLoad) {
       return list[0];

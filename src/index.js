@@ -1,10 +1,11 @@
 import "./scss/index.scss";
 
 import Util from "./el/base/index";
-import EasyLogic from "./editor-layouts/designeditor/index";
+import EasyLogic from "./editor-layouts/inspector/index";
 
 function startEditor() {
-  var app = new EasyLogic.createDesignEditor({
+  var app = EasyLogic.craeteInspector({
+    container: document.getElementById('app'),
     data: {
       projects: [{
         itemType: 'project', 
@@ -30,4 +31,4 @@ export default {
   startEditor
 };
 
-window.EasylogicEditor = startEditor();
+startEditor();

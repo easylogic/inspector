@@ -38,9 +38,7 @@ const LICENSE = `
 module.exports = {
   // Entry files for our popup and background pages
   entry: {
-    editor: "./src/index.js",
-    player: "./src/index-player.js",    
-    single: "./src/index-single.js"
+    inspector: "./src/index.js",
   },
   output: {
     library: "EasylogicStudio",

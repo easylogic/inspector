@@ -116,6 +116,7 @@ export const PREVENT = AFTER(`preventDefault`);
 export const STOP = AFTER(`stopPropagation`);
 
 export const SUBSCRIBE = SUBSCRIBE_EVENT_MAKE;
+export const SUBSCRIBE_ALL = (...args) => SUBSCRIBE_EVENT_MAKE(...args, ALL_TRIGGER);
 export const CUSTOM = DOM_EVENT_MAKE;
 export const CLICK = DOM_EVENT_MAKE("click");
 export const DOUBLECLICK = DOM_EVENT_MAKE("dblclick");
