@@ -98,6 +98,7 @@ export const D1000 = DEBOUNCE(1000)
 export const THROTTLE = (t = 100) => {
   return CHECKER(`throttle(${t})`);
 };
+export const ALL_TRIGGER = CHECKER("allTrigger()");
 
 export const CAPTURE = CHECKER("capture()");
 // event config method

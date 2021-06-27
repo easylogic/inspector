@@ -4,7 +4,7 @@ import Util from "./el/base/index";
 import EasyLogic from "./editor-layouts/inspector/index";
 
 function startEditor() {
-  var app = EasyLogic.craeteInspector({
+  var app = EasyLogic.createInspector({
     container: document.getElementById('app'),
     data: {
       projects: [{

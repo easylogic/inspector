@@ -9,7 +9,7 @@ import { EditorElement } from "../common/EditorElement";
 
 const directions = [
     'top-left',
-    'top',
+    'top', 
     'top-right',
     'left',
     'right',

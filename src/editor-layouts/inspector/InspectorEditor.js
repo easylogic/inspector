@@ -31,11 +31,6 @@ export default class InspectorEditor extends BaseLayout {
       MenuItem,
       LayerRender
     });
-
-    var $body = this.opt.$container;
-    
-    $body.attr('data-theme', this.$editor.theme);
-    $body.addClass(navigator.userAgent.includes('Windows') ? 'ua-window': 'ua-default')
   }
 
   initState() {
@@ -43,13 +38,14 @@ export default class InspectorEditor extends BaseLayout {
       leftSize: 340,
       rightSize: 260,
       bottomSize: 0,
-      lastBottomSize: 150
+      lastBottomSize: 150,
+      ua: navigator.userAgent.includes('Windows') ? 'ua-window': 'ua-default'
     }
   }
 
   template() {
     return /*html*/`
-      <div class="easylogic-inspector ">
+      <div class="easylogic-inspector ${this.state.ua}" data-theme="${this.$editor.theme}">
         <div class="layout-main">
             <object refClass='Inspector' />
         </div>

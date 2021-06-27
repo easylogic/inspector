@@ -1,6 +1,5 @@
 import { CSS_TO_STRING } from "el/base/functions/func";
 import SVGRenderer from "el/editor/renderer/SVGRenderer";
-import AnimationExport from "../exporter/animation-export/AnimationExport";
 
 export default {
 
@@ -54,11 +53,6 @@ ${this.makeSvg(project)}
 
     html = editor.replaceLocalUrltoRealUrl(html);
     css = editor.replaceLocalUrltoRealUrl(css);
-
-    if (current.is('artboard')) {
-      js = editor.replaceLocalUrltoRealUrl(AnimationExport.generate(current, 'anipa'));
-    }
-
   
     return { html, css, js }
   },

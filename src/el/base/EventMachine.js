@@ -193,10 +193,10 @@ export default class EventMachine {
     }
 
     // LOAD 로 정의된 것들을 수행한다. 
-    this.load();
-
-    // render 이후에 실행될 콜백을 정의한다. 
-    this.afterRender();
+    this.load().then(() => {
+      // render 이후에 실행될 콜백을 정의한다. 
+      this.afterRender();
+    });
   }
 
   initialize() {

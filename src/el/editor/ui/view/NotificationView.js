@@ -1,5 +1,4 @@
 
-import icon from "el/editor/icon/icon";
 import Dom from "el/base/Dom";
 import { TRANSITIONEND, CLICK, SUBSCRIBE } from "el/base/Event";
 import { registElement } from "el/base/registElement";
@@ -27,7 +26,7 @@ export default class NotificationView extends EditorElement {
         <div class='item ${type}' style='transition-duration: ${duration}ms;'>
             <div class='title'>${title}</div> 
             <div class='description'>${description}</div>
-            <span class='icon'>${icon.close}</span>
+            <span class='icon'>&times;</span>
         </div>
     `
     }

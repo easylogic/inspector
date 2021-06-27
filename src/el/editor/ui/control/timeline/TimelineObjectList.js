@@ -39,7 +39,7 @@ export default class TimelineObjectList extends EditorElement {
                 <div class='icon'>${icon.chevron_right}</div>
                 <div class='title'> ${obj.name}</div>
                 <div class='tools'>
-                    <button type="button" class='remove-timeline' data-layer-id='${obj.id}'>${icon.remove}</button>
+                    <button type="button" class='remove-timeline' data-layer-id='${obj.id}'>&times;</button>
                     <button type="button" class='empty'></button>                    
                 </div>
             </div>
@@ -56,7 +56,7 @@ export default class TimelineObjectList extends EditorElement {
                       ${property.property === 'points' ? layer.totalLength : ''}
                     </div>
                     <div class='tools'>
-                        <button type="button" class='remove' data-layer-id='${obj.id}' data-property='${property.property}'>${icon.remove}</button>
+                        <button type="button" class='remove' data-layer-id='${obj.id}' data-property='${property.property}'>&times;</button>
                         <button type="button" class='add' data-layer-id='${obj.id}' data-property='${property.property}'></button>
                     </div>
                 </div>`

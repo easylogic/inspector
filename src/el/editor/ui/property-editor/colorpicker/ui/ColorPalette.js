@@ -39,7 +39,7 @@ export default class ColorPalette extends EditorElement {
 
   [BIND('$drag_pointer')] () {
 
-    if (this.rect.width === 0) {
+    if (!this.rect || this.rect?.width === 0) {
       this.rect = this.$el.rect();
     }
 

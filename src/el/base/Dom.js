@@ -356,7 +356,6 @@ export default class Dom {
     var t = target.el ? target.el : target;
 
     t.appendChild(this.el);
-
     return this;
   }
 

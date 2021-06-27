@@ -29,7 +29,7 @@ export default class ArtboardItems extends EditorElement {
           <div class='tools'>
             <div class='title'>${it.artboard.name}</div>
             <div class='buttons'>
-              <button type="button" class='remove-artboard-preview' data-preview-id="${it.id}">${icon.remove}</button>
+              <button type="button" class='remove-artboard-preview' data-preview-id="${it.id}">&times;</button>
             </div>
           </div>
         </div>

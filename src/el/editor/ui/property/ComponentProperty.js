@@ -47,33 +47,17 @@ export default class ComponentProperty extends BaseProperty {
   }
 
   getPropertyEditor (index, key, value, selfEditor, selfEditorOptions) {
-    if (isString(selfEditor)) {
-      return /*html*/`
-        <div>  
-          <object refClass="${selfEditor}" ${OBJECT_TO_PROPERTY({
-            ...selfEditorOptions,
-            onchange: 'changeComponentProperty',
-            ref: `${key}${index}`,
-            key,
-          })}>
-            <property name="value" valueType="json">${JSON.stringify(value || {})}</property>
-          </object>
-        </div>`
-    } else {
-      return Object.keys(selfEditor).map(selfEditorKey => {
-        return /*html*/`
-          <div>
-            <object refClass="${selfEditorKey}" ${OBJECT_TO_PROPERTY({
-              ...selfEditorOptions,
-              onchange: 'changeComponentProperty',
-              ref: `${key}${index}${selfEditorKey}`,
-              key,
-            })}>
-              <property name="value" valueType="json">${JSON.stringify(value || {})}</property>
-            </object>
-          </div>`
-      }).join('');
-    }
+    return /*html*/`
+      <div>  
+        <object refClass="${selfEditor}" ${OBJECT_TO_PROPERTY({
+          ...selfEditorOptions,
+          onchange: 'changeComponentProperty',
+          ref: `${key}${index}`,
+          key,
+        })}>
+          <property name="value" valueType="json">${JSON.stringify(value || {})}</property>
+        </object>
+      </div>`
   }
 
   [LOAD('$body')] () {

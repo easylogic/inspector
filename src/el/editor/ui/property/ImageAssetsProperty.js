@@ -48,7 +48,7 @@ export default class ImageAssetsProperty extends BaseProperty {
           </div>
           <div class='tools'>
             <button type="button" class='copy'>${icon.copy}</button>          
-            <button type="button" class='remove'>${icon.remove}</button>
+            <button type="button" class='remove'>&times;</button>
           </div>
         </div>
       `

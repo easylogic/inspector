@@ -4,7 +4,6 @@ import { CLICK, PREVENT, STOP } from "el/base/Event";
 import "../property-editor";
 import Dom from "el/base/Dom";
 import { isFunction } from "el/base/functions/func";
-import icon from "el/editor/icon/icon";
 import { EditorElement } from "../common/EditorElement";
 
 
@@ -18,17 +17,8 @@ export default class BaseProperty extends EditorElement {
             ${this.isHideHeader() ? ''
             : /*html*/`
             <div class='property-title ${this.getTitleClassName()}' ref="$title">
-                <label class="${this.hasKeyframe() ? 'has-keyframe': ''}"> 
-                  ${
-                    this.hasKeyframe() ? 
-                    /*html*/`
-                      <span class='add-timeline-property' data-property='${this.getKeyframeProperty()}'></span>
-                    `
-
-                    : ''
-                  } 
+                <label> 
                   <span ref='$propertyTitle'>${this.getTitle()}</span>
-                  <span class='icon'>${icon.chevron_right}</span>
                 </label>
                 <span class="tools">${this.getTools()}</span>
             </div>`

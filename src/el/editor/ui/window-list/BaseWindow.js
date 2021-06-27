@@ -1,6 +1,5 @@
 
 import { CLICK } from "el/base/Event";
-import icon from "el/editor/icon/icon";
 import { EditorElement } from "../common/EditorElement";
 
 export default class BaseWindow extends EditorElement {
@@ -13,7 +12,7 @@ export default class BaseWindow extends EditorElement {
                 <label>${this.getTitle()}</label>
                 <span class="tools">
                   ${this.getTools()}
-                  <button type='button' class='close' ref='$close'>${icon.close}</button>
+                  <button type='button' class='close' ref='$close'>&times;</button>
                 </span>
             </div>
             <div class='window-body'>${this.getBody()}</div>

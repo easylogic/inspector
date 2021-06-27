@@ -25,7 +25,7 @@ export default class PerspectiveOriginProperty extends BaseProperty {
 
   getTools() {
     return /*html*/`
-        <button type="button" class="remove" ref='$remove'>${icon.remove}</button>
+        <button type="button" class="remove" ref='$remove'>&times;</button>
     `
   }
 
