@@ -6,7 +6,6 @@ import Resource from "el/editor/util/Resource";
 import Dom from "el/base/Dom";
 import { registElement } from "el/base/registElement";
 
-import "./render-view/HTMLRenderView";
 import "../view-items/PageTools";
 import "../view-items/PageSubEditor";
 import { EditorElement } from "../common/EditorElement";
@@ -31,7 +30,6 @@ export default class CanvasView extends EditorElement {
       <div class='page-container' tabIndex="-1" ref='$container'>
         <div class='page-view'>
           <div class='page-lock scrollbar' ref='$lock'>
-            <object refClass='HTMLRenderView' ref='$elementView' />
             <div ref='$viewport'></div>
           </div>
         </div>

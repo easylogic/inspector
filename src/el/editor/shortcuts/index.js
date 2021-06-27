@@ -36,7 +36,6 @@ import ungroupItem from "./ungroup.item";
 export default [
     // add layer 
     selectView,
-    groupItem,
     ungroupItem,
 
     // move segment by arrow key 
