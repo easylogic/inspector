@@ -41,7 +41,7 @@ module.exports = {
     inspector: "./src/index.js",
   },
   output: {
-    library: "EasylogicStudio",
+    library: "Inspector",
     libraryTarget: "umd",
     path: __dirname + "/docs",
     filename: '[name].js?[contenthash]'

@@ -52,7 +52,11 @@ export const ComponentManager = new class {
    * @returns 
    */
   createInspector (item) {
+
+    console.log(item);
     const inspector = this.getInspector(item.itemType);
+
+    console.log(inspector);
 
     if (isFunction(inspector)) {
       return inspector(item) || [];

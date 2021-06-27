@@ -43,13 +43,9 @@ import FuncFilterEditor from "./FuncFilterEditor";
 import ColorMatrixEditor from "./ColorMatrixEditor";
 import TextAreaEditor from "./TextAreaEditor";
 import FlexLayoutEditor from "./FlexLayoutEditor";
-import GridLayoutEditor from "./GridLayoutEditor";
 import FlexLayoutItemEditor from "./FlexLayoutItemEditor";
-import GridBoxEditor from "./GridBoxEditor";
 import GridLayoutItemEditor from "./GridLayoutItemEditor";
 import NumberInputEditor from "./NumberInputEditor";
-import GridGapEditor from "./GridGapEditor";
-import PatternEditor from "./PatternEditor";
 import PatternSizeEditor from "./PatternSizeEditor";
 import BlendSelectEditor from "./BlendSelectEditor";
 import MediaProgressEditor from "./MediaProgressEditor";
@@ -62,14 +58,10 @@ export default {
     CheckBoxEditor,
     MediaProgressEditor,
     BlendSelectEditor,
-    PatternEditor,
     PatternSizeEditor,
-    GridGapEditor,
     NumberInputEditor,
     GridLayoutItemEditor,
-    GridBoxEditor,
     FlexLayoutItemEditor,
-    GridLayoutEditor,
     FlexLayoutEditor,
     TextAreaEditor,
     ColorMatrixEditor,

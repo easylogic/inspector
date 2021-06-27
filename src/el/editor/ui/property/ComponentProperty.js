@@ -10,34 +10,8 @@ export default class ComponentProperty extends BaseProperty {
     return "Component";
   }
 
-  isShow () {
-    var current = this.$selection.current;
-
-    if (current && current.is('component')) {
-      return true; 
-    }
-
-    return false; 
-  }
-
-  [SUBSCRIBE('refreshSelection') + DEBOUNCE(100)]() {
-
-    this.refreshShow((type) => {
-      const current = this.$selection.current;
-      const inspector = this.$editor.components.createInspector(current);
-      return inspector.length > 0;
-    })
-
-  }
-
-  refresh() {
-    
-    var current = this.$selection.current;
-
-    if (current) {
-      this.setTitle(current.getDefaultTitle() || current.itemType || current.name);
-      this.load();
-    }    
+  isShow() {
+    return true; 
   }
 
   getBody() {
@@ -48,7 +22,6 @@ export default class ComponentProperty extends BaseProperty {
 
   getPropertyEditor (index, key, value, selfEditor, selfEditorOptions) {
     return /*html*/`
-      <div>  
         <object refClass="${selfEditor}" ${OBJECT_TO_PROPERTY({
           ...selfEditorOptions,
           onchange: 'changeComponentProperty',
@@ -57,20 +30,12 @@ export default class ComponentProperty extends BaseProperty {
         })}>
           <property name="value" valueType="json">${JSON.stringify(value || {})}</property>
         </object>
-      </div>`
+      `
   }
 
   [LOAD('$body')] () {
 
-    var current = this.$selection.current;
-
-    if (!current) return ''; 
-
-    if (current && !current.is('component')) {
-      return ''; 
-    }
-
-    const inspector = this.$editor.components.createInspector(current);
+    const inspector = this.$editor.components.createInspector({ itemType: this.props.targetinspector});
 
     var self = inspector.map((it, index)=> {
 
@@ -82,7 +47,7 @@ export default class ComponentProperty extends BaseProperty {
       } else {
         return /*html*/`
           <div class='property-item'> 
-            ${this.getPropertyEditor(index, it.key, current[it.key] || it.defaultValue, it.editor, it.editorOptions)}
+            ${this.getPropertyEditor(index, it.key, it.value || it.defaultValue, it.editor, it.editorOptions)}
           </div>
         `
       }
@@ -94,12 +59,7 @@ export default class ComponentProperty extends BaseProperty {
 
   [SUBSCRIBE('changeComponentProperty')] (key, value) {
 
-    const current = this.$selection.current;
-    const inspector = this.$editor.components.createInspector(current);    
-    const convert = inspector.find(it => it.key === key)?.convert;
-    const realValueObject = convert ? convert(current, key, value) : { [key] : value }
-
-    this.command("setAttribute", 'change component', realValueObject, null, true)
+    console.log(key, value);
   }
 }
 

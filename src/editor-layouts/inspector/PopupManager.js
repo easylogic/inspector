@@ -7,19 +7,24 @@ import { EditorElement } from "el/editor/ui/common/EditorElement";
 
 export default class PopupManager extends EditorElement {
 
-  afterRender() {
-    this.$el.appendTo(document.body);
+  isSingleInstance() {
+    return true;
+  }
+
+  get renderTarget() {
+    return document.body;
   }
 
   initState() {
     return {
+
       ua: navigator.userAgent.includes('Windows') ? 'ua-window': 'ua-default'
     }
   }  
 
   template() {
     return /*html*/`
-      <div class="easylogic-inspector popup-manager ${this.state.ua}" data-theme="${this.$editor.theme}">    
+      <div class="easylogic-inspector popup-manager ${this.id} ${this.state.ua}" data-theme="${this.$editor.theme}">    
         <object refClass='ColorPickerPopup' />
         <object refClass='BoxShadowPropertyPopup' />
         <object refClass='BackgroundImagePositionPopup' />

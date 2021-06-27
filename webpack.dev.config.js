@@ -103,7 +103,7 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       inject: true,
-      template: "./src/index.html",
+      template: "./src/dev-index.html",
       filename: "./index.html",
     }),
     new MiniCssExtractPlugin({

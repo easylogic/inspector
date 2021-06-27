@@ -13,10 +13,22 @@ const obj = Inspector.createInspector({
   container: document.getElementById("app"),
   layout: {
     type: "box",  // default 
-    items: [
-      {}
-    ]
-  }
+  },
+  items: [
+    'title'
+  ]  
+})
+
+const obj2 = Inspector.createInspector({
+  container: document.getElementById('tabContent'),
+  layout: {
+    type: 'grid',
+    rows: 3,
+    cols: 2,
+  },
+  items: [
+    {}
+  ]  
 })
 
 // control layout 

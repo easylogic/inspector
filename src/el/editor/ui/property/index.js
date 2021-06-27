@@ -12,7 +12,6 @@ import AnimationProperty from "./AnimationProperty";
 import KeyframeProperty from "./KeyframeProperty";
 import BackgroundImageProperty from "./BackgroundImageProperty";
 import FilterProperty from "./FilterProperty";
-import CodeViewProperty from "./CodeViewProperty";
 import BackdropFilterProperty from "./BackdropFilterProperty";
 import TransformProperty from "./TransformProperty";
 import ClipPathProperty from "./ClipPathProperty";
@@ -26,15 +25,12 @@ import SelectorProperty from "./SelectorProperty";
 import PositionProperty from "./PositionProperty";
 import ProjectProperty from "./ProjectProperty";
 import LayerTreeProperty from "./LayerTreeProperty";
-import ArtBoardSizeProperty from "./ArtBoardSizeProperty";
 import ImageProperty from "./ImageProperty";
 import ColorAssetsProperty from "./ColorAssetsProperty";
 import TextFillProperty from "./TextFillProperty";
-import GradientAssetsProperty from "./GradientAssetsProperty";
 import SVGItemProperty from "./SVGItemProperty";
 import TextClipProperty from "./TextClipProperty";
 import SVGFilterAssetsProperty from "./SVGFilterAssetsProperty";
-import AlignmentProperty from "./AlignmentProperty";
 import MotionProperty from "./MotionProperty";
 import ImageAssetsProperty from "./ImageAssetsProperty";
 import VideoAssetsProperty from "./VideoAssetsProperty";
@@ -50,14 +46,12 @@ import FlexLayoutItemProperty from "./FlexLayoutItemProperty";
 import GridLayoutItemProperty from "./GridLayoutItemProperty";
 import PatternProperty from "./PatternProperty";
 import VideoProperty from "./VideoProperty";
-import PatternAssetsProperty from "./PatternAssetsProperty";
 import HistoryProperty from "./HistoryProperty";
 import IFrameProperty from "./IFrameProperty";
 
 export default {  
   IFrameProperty,
   HistoryProperty,
-  PatternAssetsProperty,
   VideoProperty,
   PatternProperty,
   GridLayoutItemProperty,
@@ -73,15 +67,12 @@ export default {
   ImageAssetsProperty,
   VideoAssetsProperty,
   MotionProperty,
-  AlignmentProperty,
   SVGFilterAssetsProperty,
   TextClipProperty,
   SVGItemProperty,
-  GradientAssetsProperty,
   TextFillProperty,
   ColorAssetsProperty,
   ImageProperty,
-  ArtBoardSizeProperty,
   LayerTreeProperty,
   ProjectProperty,
   PositionProperty,
@@ -93,8 +84,7 @@ export default {
   TransitionProperty,
   ClipPathProperty,
   TransformProperty,
-  BackdropFilterProperty,
-  CodeViewProperty,  
+  BackdropFilterProperty,  
   FilterProperty,
   BorderRadiusProperty,
   BackgroundImageProperty,

@@ -19,7 +19,6 @@ import { HistoryManager } from "./HistoryManager";
 import { SnapManager } from "./SnapManager";
 import { KeyBoardManager } from "./KeyboardManager";
 import { ViewportManager } from "./ViewportManager";
-import { StorageManager } from "./StorageManager";
 import { CursorManager } from "./CursorManager";
 import { AssetManager } from "./AssetManager";
 import { PluginManager } from "./PluginManager";
@@ -79,7 +78,6 @@ export const Editor = new class {
     this.history = new HistoryManager(this);
     this.keyboardManager = new KeyBoardManager(this);
     this.viewport = new ViewportManager(this);
-    this.storageManager = new StorageManager(this);
     this.cursorManager = new CursorManager(this);
     this.assetManager = new AssetManager(this);
     this.menuItemManager = new MenuItemManager(this);
@@ -527,6 +525,4 @@ export const Editor = new class {
   registerPluginList(plugins = []) {
     plugins.forEach(p => this.registerPlugin(p));
   }
-
-
 }();

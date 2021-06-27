@@ -38,13 +38,11 @@ const LICENSE = `
 module.exports = {
   // Entry files for our popup and background pages
   entry: {
-    editor: "./src/editor-layouts/designeditor/index.js",
-    player: "./src/editor-layouts/designplayer/index.js",   
-    single: "./src/editor-layouts/singleeditor/index.js",   
+    inspector: "./src/editor-layouts/inspector/index.js",
   },
   output: {
-    library: "EasylogicStudio",
-    libraryTarget: "umd",
+    library: "Inspector",
+    libraryTarget: "umd",  
     libraryExport : "default",    
     path: __dirname + "/dist",
     filename: '[name].js',

@@ -77,6 +77,8 @@ const expectMethod = {
   "bodyMouseUp": true,
 }
 
+const singleInstanceMap = new Map();
+
 export default class EventMachine {
   constructor(opt, props) {
     this.state = {};
@@ -103,9 +105,6 @@ export default class EventMachine {
     this.props = props;
     this.source = uuid();
     this.sourceName = this.constructor.name;  
-
-
-
   }
 
   initComponents() {
@@ -123,6 +122,10 @@ export default class EventMachine {
       new BindHandler(this),
       new DomEventHandler(this)
     ]
+  }
+
+  isSingleInstance() {
+    return false; 
   }
 
   /**
@@ -350,13 +353,38 @@ export default class EventMachine {
         } else {
           // 기존의 refName 이 존재하지 않으면 Component 를 생성해서 element 를 교체한다. 
           instance = new EventMachineComponent(this, props);
+
+          if (instance.isSingleInstance()) {
+            console.log(singleInstanceMap, singleInstanceMap.has(instance.sourceName));
+            if (singleInstanceMap.has(instance.sourceName)) {
+              console.log(instance)
+              // NOOP 
+              $dom.remove();
+            } else {
+              singleInstanceMap.set(instance.sourceName, instance);
+
+              this.children[refName || instance.id] = instance;
   
-          this.children[refName || instance.id] = instance;
+              instance.render();              
+
+            }
+
+          } else {
+
+            this.children[refName || instance.id] = instance;
   
-          instance.render();
+            instance.render();
+          }
+  
         }
         
-        $dom.replace(instance.$el);     
+        if (instance.renderTarget) {
+          instance.$el?.appendTo(instance.renderTarget);
+          $dom.remove();
+        } else {
+          $dom.replace(instance.$el);     
+        }
+
       } else {
         $dom.remove();
       }
