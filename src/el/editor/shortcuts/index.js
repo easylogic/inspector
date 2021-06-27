@@ -1,5 +1,3 @@
-import clipboardCopy from "./clipboard.copy";
-import clipboardPaste from "./clipboard.paste";
 import itemMoveShiftLeft from "./item.move.shift.left";
 import itemMoveKeyLeft from "./item.move.key.left";
 import itemMoveKeyRight from "./item.move.key.right";
@@ -28,40 +26,16 @@ import segmentMoveShiftRight from "./segment.move.shift.right";
 import segmentDelete from "./segment.delete";
 import scaleMinus from "./scale.minus";
 import scalePlus from "./scale.plus";
-import addRect from "./add.rect";
 import selectView from "./select.view";
-import addRectM from "./add.rect.m";
-import addCircle from "./add.circle";
-import addCircleL from "./add.circle.l";
-import addText from "./add.text";
-import addPath from "./add.path";
-import addBrush from "./add.brush";
 import itemMoveDepthUp from "./item.move.depth.up";
 import itemMoveDepthDown from "./item.move.depth.down";
 import removeLayerShift from "./removeLayerShift";
-import groupItem from "./group.item";
 import ungroupItem from "./ungroup.item";
-import historyUndo from "./history.undo";
-import historyRedo from "./history.redo";
-import addArtboard from "./add.artboard";
 
 
 export default [
-    // history 
-    historyUndo,
-    historyRedo,
-    
     // add layer 
     selectView,
-    addArtboard,
-    addRect,
-    addRectM,
-    addCircle,
-    addCircleL,
-    addText,
-    addPath,
-    addBrush,
-
     groupItem,
     ungroupItem,
 
@@ -111,8 +85,4 @@ export default [
     // zoom
     scaleMinus,
     scalePlus,    
-
-    // clipboard 
-    clipboardCopy,
-    clipboardPaste
 ]
