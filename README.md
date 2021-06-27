@@ -1,81 +1,82 @@
-# EasyLogic Studio
+# EasyLogic Inspector
 
-
-EasyLogic Studio is built using CSS and SVG to reduce the gap between web design and code. The goal is to have the same point in time between the designer's design and the developer's output.
-
-
-* manual : https://www.easylogic.studio/docs/getting-started.html
-* editor : https://editor.easylogic.studio/
-
+Fantastic Inspector for UI System 
 
 This project is [sapa](https://github.com/easylogic/sapa) based. 
 
-# Screen Shot 
+# How to use (comming soon)
 
-<img src='https://www.easylogic.studio/images/editor.png' />
+```js
+import Inspector from "@easylogic/inspector";
+
+const obj = Inspector.createInspector({
+  container: document.getElementById("app"),
+  layout: {
+    type: "box",  // default 
+    items: [
+      {}
+    ]
+  }
+})
+
+// control layout 
+obj.setLayout({
+  type: "grid",
+  rows: 2,
+  cols: 3
+})
+
+// set item editor 
+obj.setItems([
+  { 
+    type: 'color', 
+    key: 'background-color', 
+    defaultValue: '#ededed', 
+    layout: {
+      row: 1,
+      col: 1
+    } 
+  }
+])
+
+obj.defaultValue // return { 'background-color': '#ededed' }
+
+// set value 
+obj.set("key", value);
+obj.set({
+  key: 1,
+  key2: 2,
+  key3: 3
+});
+obj.key = value; 
+
+// get value 
+obj.get("key");   // return one value 
+obj.key;          // return one value 
+obj.get("key", "key2", "key3");  // return { key, key2, key3 }
+
+// event 
+obj.on("change", (obj) => {
+  // obj is all value 
+})
+
+obj.on("change:key", (newValue, oldValue) => {
+  // when key is changed
+})
+
+obj.on("lastChanged", (obj) => {
+  // obj is all value 
+})
+
+obj.on("lastChanged:key", (newValue, oldValue) => {
+  // when key is changed
+})
 
 
-# Features 
 
-### Support Element 
-
-* Rect 
-* Circle 
-* Text 
-* Image 
-* Cube 
-* Cylinder 
-* SVG Path 
-* SVG Rect with path 
-* SVG Circle with path 
-* SVG Text 
-* SVG TextPath
+```
 
 
-### Style
-
-* Alignment 
-* Position 
-* Size 
-* BoxModel 
-* Transform 
-  * Support transform ui  (rotate X,Y,Z )
-* Many styling tools 
-  * background
-  * font & text style 
-  * gradient (multiple background images)
-  * border & radius 
-  * filter
-  * clip-path
-  * box-shadows 
-  * text-shadows 
-
-
-### Animation 
-* Transition 
-* Animation & Keyframes 
-* Support cubic-bezier editor 
-* Support timeline editor 
-
-### Code & Share 
-* Support export to CodePen 
-* Support code viewer  
-* Support png & svg download  
-
-### Drawing 
-* Support mini path and polygon editor 
-* Support draw star polygon 
-
-### Assets 
-* Color
-* Gradient
-* SVG Filter 
-* Image 
-
-
-### Theming  
-* dark
-* light
 
 
 # Development 
@@ -92,10 +93,6 @@ npm run dev
 ```
 npm run build 
 ```
-
-# Thanks to 
-
-* icon - https://material.io/resources/icons/?style=baseline
 
 
 # License : MIT
