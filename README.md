@@ -4,6 +4,7 @@ Fantastic Inspector for UI System
 
 This project is [sapa](https://github.com/easylogic/sapa) based. 
 
+
 # How to use (comming soon)
 
 ```js
@@ -85,6 +86,30 @@ obj.on("lastChanged:key", (newValue, oldValue) => {
 })
 
 
+
+```
+
+# How to use other editor 
+
+```js
+
+import Inspector from '@easylogic/inspector';
+
+const rangeEditor = new Inspector.ui.RangeEditor({
+  container: document.getElementById('app'),
+  onChange: function (value) {
+    console.log(value);
+  },
+  onLastChanged: function (value) {
+    console.log(value);
+  }  
+})
+
+// getter 
+rangeEditor.value;
+
+// setter 
+rangeEditor.value = 0; 
 
 ```
 
